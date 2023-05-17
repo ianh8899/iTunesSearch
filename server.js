@@ -3,9 +3,14 @@ const express = require('express');
 const axios = require('axios');
 const fs = require('fs');
 const cors = require('cors');
+const helmet = require("helmet");
+
 
 // Create an Express application
 const app = express();
+
+//Use Helmet
+app.use(helmet());
 
 // Use JSON middleware to parse request bodies
 app.use(express.json());
@@ -69,10 +74,4 @@ app.delete('/favourites/:id', (req, res) => {
     res.json({ message: 'Favourite deleted successfully' });
 });
 
-// Start the server on port 8080
-app.listen(8080, () => {
-    console.log('Server running on port 8080');
-});
-
-//export for testing
 module.exports = app;
