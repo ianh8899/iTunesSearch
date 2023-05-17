@@ -30,7 +30,7 @@ const Favourites = () => {
             {/* Display the favourites as cards */}
             <Row>
                 {favourites.map((item) => (
-                    <Col md={4} key={item.trackId}>
+                    <Col md={3} key={item.trackId}>
                         <Card className="mb-4">
                             <Card.Img variant="top" src={item.artworkUrl100} />
                             <Card.Body>

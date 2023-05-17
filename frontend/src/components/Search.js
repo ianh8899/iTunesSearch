@@ -22,7 +22,6 @@ const Search = () => {
         setResults(response.data);
     };
 
-
     // Add a selected item to the favourites list
     // Send the item to the backend to save as a favourite
     // Show a confirmation message
@@ -34,35 +33,43 @@ const Search = () => {
     return (
         <Container>
             <Form onSubmit={handleSubmit}>
-                {/* Input field for search text */}
-                <Form.Group controlId="searchText">
-                    <Form.Label>Search Text</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Enter search text"
-                        value={searchText}
-                        onChange={(e) => setSearchText(e.target.value)}
-                    />
-                </Form.Group>
-                {/* Dropdown menu for search criteria */}
-                <Form.Group controlId="searchCriteria">
-                    <Form.Label>Search Criteria</Form.Label>
-                    <Form.Control as="select" value={searchCriteria} onChange={(e) => setSearchCriteria(e.target.value)}>
-                        <option value="all">All</option>
-                        <option value="movie">Movie</option>
-                        <option value="podcast">Podcast</option>
-                        <option value="music">Music</option>
-                        <option value="audiobook">Audiobook</option>
-                        <option value="shortFilm">Short Film</option>
-                        <option value="tvShow">TV Show</option>
-                        <option value="software">Software</option>
-                        <option value="ebook">Ebook</option>
-                    </Form.Control>
-                </Form.Group>
-                {/* Button to submit the search form */}
-                <Button variant="primary" type="submit">
-                    Search
-                </Button>
+                <Row>
+                    {/* Input field for search text */}
+                    <Col md={9}>
+                        <Form.Group controlId="searchText" className="mt-4">
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter search text"
+                                value={searchText}
+                                onChange={(e) => setSearchText(e.target.value)}
+                            />
+                        </Form.Group>
+                    </Col>
+                    {/* Dropdown menu for search criteria */}
+                    <Col md={3}>
+                        <Form.Group controlId="searchCriteria" className="mt-4">
+                            <Form.Control as="select" value={searchCriteria} onChange={(e) => setSearchCriteria(e.target.value)}>
+                                <option value="all">All</option>
+                                <option value="movie">Movie</option>
+                                <option value="podcast">Podcast</option>
+                                <option value="music">Music</option>
+                                <option value="audiobook">Audiobook</option>
+                                <option value="shortFilm">Short Film</option>
+                                <option value="tvShow">TV Show</option>
+                                <option value="software">Software</option>
+                                <option value="ebook">Ebook</option>
+                            </Form.Control>
+                        </Form.Group>
+                    </Col>
+                </Row>
+                <Row className="text-center mb-4">
+                    <Col>
+                        <Form.Label className="d-none d-md-block">&nbsp;</Form.Label>
+                        <Button variant="secondary" type="submit">
+                            Search
+                        </Button>
+                    </Col>
+                </Row>
             </Form>
             {/* Display search results as cards */}
             <Row>
@@ -74,7 +81,7 @@ const Search = () => {
                                 <Card.Title>{item.trackName}</Card.Title>
                                 <Card.Text>{item.artistName}</Card.Text>
                                 {/* Button to add the item to the favourites list */}
-                                <Button variant="primary" onClick={() => addToFavourites(item)}>
+                                <Button variant="secondary" onClick={() => addToFavourites(item)}>
                                     Add to Favourites
                                 </Button>
                             </Card.Body>

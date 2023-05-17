@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# iTunes Search App
+The iTunes Search App is a web application built using React, Express, Helmet, and Bootstrap. It allows users to search for content from the iTunes Store and Apple Books Store and maintain a list of their favourite items.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+- Search for content from the iTunes Store and Apple Books Store
+- Filter search results by media type
+- Add items to a favourites list
+- Remove items from the favourites list
 
-## Available Scripts
+## Installation
+To install and run the app on your local machine, follow these steps:
 
-In the project directory, you can run:
+1) Clone the repository to your local machine using command "git clone https://github.com/ianh8899/iTunesSearch.git"
+2) Change into the project directory using command: "cd itunesapp"
+3) Start the application using command: "npm start"
 
-### `npm start`
+This will start the backend server on port 8080 and the frontend React app on port 3000. Open your web browser and navigate to http://localhost:3000 to access the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Testing
+To run tests for the backend, run the following command: "npm test"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run tests for the front end.
+1) Navigate to the front end folder using command: "cd frontend"
+2) Run the tests using command; "npm test"
 
-### `npm test`
+# Security Measures
+The following security measures have been implemented in the app:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Helmet: Helmet is a middleware for Express that helps secure your app by setting various HTTP headers. It helps prevent cross-site scripting (XSS) attacks, clickjacking, and other code injection attacks.
 
-### `npm run build`
+CORS: CORS (Cross-Origin Resource Sharing) is a security feature that allows you to restrict which domains can access your server's resources. In this app, we have used the CORS middleware for Express to enable CORS with the default configuration.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+API Key Management: To protect the API key used to access the iTunes API, the key is not exposed on the client-side. Instead, the server-side code makes the API request and sends the results back to the client.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
