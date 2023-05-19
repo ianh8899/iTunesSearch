@@ -18,26 +18,27 @@ const Favourites = () => {
     };
 
     // Function to delete a favourite from the list
-    // Send a delete request to the backend with the item's ID
+    // Send a delete request to the backend with the item's unique ID
     // Fetch the updated list of favourites from the server
-    const deleteFavourite = async (id) => {
-        await axios.delete(`http://localhost:8080/favourites/${id}`);
-        fetchFavourites();
+    const deleteFavourite = async (uniqueId) => {
+        await axios.delete(`http://localhost:8080/favourites/${uniqueId}`);
+        fetchFavourites();  // fetch updated list after deleting
     };
+
 
     return (
         <Container>
             {/* Display the favourites as cards */}
             <Row>
                 {favourites.map((item) => (
-                    <Col md={3} key={item.trackId}>
+                    <Col md={3} key={item.uniqueId}>
                         <Card className="mb-4">
                             <Card.Img variant="top" src={item.artworkUrl100} />
                             <Card.Body>
                                 <Card.Title>{item.trackName}</Card.Title>
                                 <Card.Text>{item.artistName}</Card.Text>
                                 {/* Button to remove the item from the favourites list */}
-                                <Button variant="danger" onClick={() => deleteFavourite(item.trackId)}>
+                                <Button variant="danger" onClick={() => deleteFavourite(item.uniqueId)}>
                                     Remove from Favourites
                                 </Button>
                             </Card.Body>

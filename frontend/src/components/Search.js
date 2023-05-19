@@ -42,6 +42,7 @@ const Search = () => {
                                 placeholder="Enter search text"
                                 value={searchText}
                                 onChange={(e) => setSearchText(e.target.value)}
+                                data-testid="searchCriteria"
                             />
                         </Form.Group>
                     </Col>
@@ -74,7 +75,7 @@ const Search = () => {
             {/* Display search results as cards */}
             <Row>
                 {results.map((item) => (
-                    <Col md={3} key={item.trackId}>
+                    <Col md={3} key={item.uniqueId}>
                         <Card className="mb-4">
                             <Card.Img variant="top" src={item.artworkUrl100} />
                             <Card.Body>

@@ -51,7 +51,8 @@
     "transformIgnorePatterns": [
       "node_modules/(?!(axios)/)"
     ]
+  },
+  "devDependencies": {
+    "react-test-renderer": "^18.2.0"
   }
 }
-
-
